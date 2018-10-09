@@ -3,13 +3,8 @@ package game;
 import java.util.Random;
 public class Die {
 
-    private int faceValue;
+    private int faceValue = 1;
 
-    //game.Die constructor.
-    public Die()
-    {
-        faceValue = 1;
-    }
     // Method used to roll a die.
     public void roll()
     {
