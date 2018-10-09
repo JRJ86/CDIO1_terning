@@ -1,6 +1,6 @@
 public class Player {
 
-    int point = 0;
+    private int point = 0;
 
     public void addPoints(int pointsToAdd){
 

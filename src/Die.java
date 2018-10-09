@@ -1,7 +1,7 @@
 import java.util.Random;
 public class Die {
 
-    int faceValue;
+    private int faceValue;
 
     //Die constructor.
     public Die()
