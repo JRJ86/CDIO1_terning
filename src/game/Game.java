@@ -13,10 +13,10 @@ public class Game {
         while (p1.getPoints()<40 && p2.getPoints()<40) {
             System.out.println();
             //Player 1
-            System.out.println("Current points for player one: " + p1.getPoints());
             int input = hej.nextInt();
             switch (input) {
                 case (1): {
+                    System.out.println("Current points for player one: " + p1.getPoints());
                     diceCup.roll();
 
                     p1.addPoints(diceCup.totalValue);
@@ -29,10 +29,11 @@ public class Game {
 
                     //Player 2
                     System.out.println();
-                    System.out.println("Current points for player two: " + p2.getPoints());
+
                     break;
                 }
                 case (2): {
+                    System.out.println("Current points for player two: " + p2.getPoints());
                     diceCup.roll();
 
                     p2.addPoints(diceCup.totalValue);
