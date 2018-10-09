@@ -3,6 +3,11 @@ public class Die {
 
     private int faceValue;
 
+    //Die constructor.
+    public Die()
+    {
+        faceValue = 1;
+    }
     // Method used to roll a die.
     public void roll()
     {
