@@ -11,6 +11,14 @@ public class DiceCup {
         totalValue= dice1.getFaceValue()+dice2.getFaceValue();
     }
 
+    public Die getDice1() {
+        return dice1;
+    }
+
+    public Die getDice2() {
+        return dice2;
+    }
+
     public int getTotalValue() {
         return totalValue;
     }
