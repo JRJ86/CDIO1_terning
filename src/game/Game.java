@@ -4,8 +4,7 @@ import java.util.Scanner;
 public class Game {
     public static void main(String[] args){
 
-        Die d1 = new Die();
-        Die d2 = new Die();
+        DiceCup diceCup = new DiceCup();
 
         Player p1 = new Player();
         Player p2 = new Player();
@@ -18,13 +17,12 @@ public class Game {
             int input = hej.nextInt();
             switch (input) {
                 case (1): {
-                    d1.roll();
-                    d2.roll();
+                    diceCup.roll();
 
-                    p1.addPoints(d1.getFaceValue() + d2.getFaceValue());
+                    p1.addPoints(diceCup.totalValue);
 
 
-                    System.out.println("Dice rolled: " + d1.getFaceValue() + " and " + d2.getFaceValue());
+                    System.out.println("Dice rolled: " + diceCup.getDice1().getFaceValue() + " and " + diceCup.getDice2().getFaceValue());
 
 
                     System.out.println("Points after roll for player one: " + p1.getPoints());
@@ -35,13 +33,12 @@ public class Game {
                     break;
                 }
                 case (2): {
-                    d1.roll();
-                    d2.roll();
+                    diceCup.roll();
 
-                    p2.addPoints(d1.getFaceValue() + d2.getFaceValue());
+                    p2.addPoints(diceCup.totalValue);
 
 
-                    System.out.println("Dice rolled: " + d1.getFaceValue() + " and " + d2.getFaceValue());
+                    System.out.println("Dice rolled: " + diceCup.getDice1().getFaceValue() + " and " + diceCup.getDice2().getFaceValue());
 
 
                     System.out.println("Points after roll for player two: " + p2.getPoints());
