@@ -1,3 +1,6 @@
+package game;
+import java.util.Scanner;
+
 public class Game {
     public static void main(String[] args){
 
@@ -6,15 +9,17 @@ public class Game {
 
         Player p1 = new Player();
         Player p2 = new Player();
+        System.out.println("Press '1' or '2' for rolling the dice for either player one or player two");
         Scanner hej = new Scanner(System.in);
         while (p1.getPoints()<40 && p2.getPoints()<40) {
             System.out.println();
             //Player 1
-            System.out.println("Current points for player one: "+p1.getPoints());
-
-
-            d1.roll();
-            d2.roll();
+            System.out.println("Current points for player one: " + p1.getPoints());
+            int input = hej.nextInt();
+            switch (input) {
+                case (1): {
+                    d1.roll();
+                    d2.roll();
 
                     p1.addPoints(d1.getFaceValue() + d2.getFaceValue());
 
@@ -24,13 +29,14 @@ public class Game {
 
                     System.out.println("Points after roll for player one: " + p1.getPoints());
 
-            //Player 2
-            System.out.println();
-            System.out.println("Current points for player two: "+p2.getPoints());
-
-
-            d1.roll();
-            d2.roll();
+                    //Player 2
+                    System.out.println();
+                    System.out.println("Current points for player two: " + p2.getPoints());
+                    break;
+                }
+                case (2): {
+                    d1.roll();
+                    d2.roll();
 
                     p2.addPoints(d1.getFaceValue() + d2.getFaceValue());
 
@@ -40,6 +46,9 @@ public class Game {
 
                     System.out.println("Points after roll for player two: " + p2.getPoints());
                     break;
+                }
+                default: {
+                    System.out.println("nonononononono bad boy");
                 }
 
             }
@@ -55,7 +64,7 @@ public class Game {
         } else {
             System.out.println("Player one and player two are equals... pussies");
         }
-    hej.close();
+        hej.close();
     }
 
 }
