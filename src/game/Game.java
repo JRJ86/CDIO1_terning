@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 public class Game {
     public static void main(String[] args){
 
@@ -12,12 +10,11 @@ public class Game {
         while (p1.getPoints()<40 && p2.getPoints()<40) {
             System.out.println();
             //Player 1
-            System.out.println("Current points for player one: " + p1.getPoints());
-            int input = hej.nextInt();
-            switch (input) {
-                case (1): {
-                    d1.roll();
-                    d2.roll();
+            System.out.println("Current points for player one: "+p1.getPoints());
+
+
+            d1.roll();
+            d2.roll();
 
                     p1.addPoints(d1.getFaceValue() + d2.getFaceValue());
 
@@ -27,14 +24,13 @@ public class Game {
 
                     System.out.println("Points after roll for player one: " + p1.getPoints());
 
-                    //Player 2
-                    System.out.println();
-                    System.out.println("Current points for player two: " + p2.getPoints());
-                    break;
-                }
-                case (2): {
-                    d1.roll();
-                    d2.roll();
+            //Player 2
+            System.out.println();
+            System.out.println("Current points for player two: "+p2.getPoints());
+
+
+            d1.roll();
+            d2.roll();
 
                     p2.addPoints(d1.getFaceValue() + d2.getFaceValue());
 
