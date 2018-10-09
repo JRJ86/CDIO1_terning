@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Game {
     public static void main(String[] args){
 
@@ -6,40 +8,45 @@ public class Game {
 
         Player p1 = new Player();
         Player p2 = new Player();
-
+        Scanner hej = new Scanner(System.in);
         while (p1.getPoints()<40 && p2.getPoints()<40) {
             System.out.println();
             //Player 1
-            System.out.println("Current points for player one: "+p1.getPoints());
+            System.out.println("Current points for player one: " + p1.getPoints());
+            int input = hej.nextInt();
+            switch (input) {
+                case (1): {
+                    d1.roll();
+                    d2.roll();
+
+                    p1.addPoints(d1.getFaceValue() + d2.getFaceValue());
 
 
-            d1.roll();
-            d2.roll();
-
-            p1.addPoints(d1.getFaceValue() + d2.getFaceValue());
+                    System.out.println("Dice rolled: " + d1.getFaceValue() + " and " + d2.getFaceValue());
 
 
-            System.out.println("Dice rolled: "+d1.getFaceValue() + " and " + d2.getFaceValue());
+                    System.out.println("Points after roll for player one: " + p1.getPoints());
+
+                    //Player 2
+                    System.out.println();
+                    System.out.println("Current points for player two: " + p2.getPoints());
+                    break;
+                }
+                case (2): {
+                    d1.roll();
+                    d2.roll();
+
+                    p2.addPoints(d1.getFaceValue() + d2.getFaceValue());
 
 
-            System.out.println("Points after roll for player one: "+p1.getPoints());
-
-            //Player 2
-            System.out.println();
-            System.out.println("Current points for player two: "+p2.getPoints());
+                    System.out.println("Dice rolled: " + d1.getFaceValue() + " and " + d2.getFaceValue());
 
 
-            d1.roll();
-            d2.roll();
+                    System.out.println("Points after roll for player two: " + p2.getPoints());
+                    break;
+                }
 
-            p2.addPoints(d1.getFaceValue() + d2.getFaceValue());
-
-
-            System.out.println("Dice rolled: "+d1.getFaceValue() + " and " + d2.getFaceValue());
-
-
-            System.out.println("Points after roll for player two: "+p2.getPoints());
-
+            }
         }
         System.out.println();
         System.out.println("TIME TO FIND OUT WHO BITES THE DUST BITCHES");
@@ -52,6 +59,7 @@ public class Game {
         } else {
             System.out.println("Player one and player two are equals... pussies");
         }
-
+    hej.close();
     }
+
 }
