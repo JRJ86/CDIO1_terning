@@ -14,6 +14,12 @@ public class Die {
         Random rand = new Random();
         faceValue = rand.nextInt(6)+1;
     }
+    //This method returns the faceValue.
+    public int getFaceValue()
+    {
+        return faceValue;
+    }
+
 
 }
 
