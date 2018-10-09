@@ -1,9 +1,11 @@
+package game;
+
 import java.util.Random;
 public class Die {
 
     private int faceValue;
 
-    //Die constructor.
+    //game.Die constructor.
     public Die()
     {
         faceValue = 1;
