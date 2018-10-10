@@ -3,66 +3,77 @@ import java.util.Scanner;
 
 public class Game {
     public static void main(String[] args){
-
+        Scanner scanner = new Scanner(System.in);
         DiceCup diceCup = new DiceCup();
+        Player player1 = new Player();
+        Player player2 = new Player();
 
-        Player p1 = new Player();
-        Player p2 = new Player();
-        System.out.println("Press '1' or '2' for rolling the dice for either player one or player two");
-        Scanner hej = new Scanner(System.in);
-        while (p1.getPoints()<40 && p2.getPoints()<40) {
+
+        // Run Game
+        System.out.println("Welcome to the Dice Game!");
+        System.out.println();
+        System.out.println("Press '1' or '2' for rolling the dice for either Player 1 or Player 2");
+
+        // Main Game Loop
+        while (player1.getPoints()<40 && player2.getPoints()<40) {
             System.out.println();
-            //Player 1
-            int input = hej.nextInt();
+
+            // Requesting input
+            System.out.println("Roll the dice: ");
+            int input = scanner.nextInt();
+
             switch (input) {
+
                 case (1): {
-                    System.out.println("Current points for player one: " + p1.getPoints());
+                    // Player 1
+
+                    System.out.println("Current points for Player 1: " + player1.getPoints());
+
                     diceCup.roll();
+                    System.out.println("Player 1 rolled: " + diceCup.getDice1().getFaceValue() + " and " + diceCup.getDice2().getFaceValue());
 
-                    p1.addPoints(diceCup.totalValue);
-
-
-                    System.out.println("Dice rolled: " + diceCup.getDice1().getFaceValue() + " and " + diceCup.getDice2().getFaceValue());
-
-
-                    System.out.println("Points after roll for player one: " + p1.getPoints());
-
-                    //Player 2
-                    System.out.println();
+                    player1.addPoints(diceCup.totalValue);
+                    System.out.println("Points after roll for Player 1: " + player1.getPoints());
 
                     break;
                 }
                 case (2): {
-                    System.out.println("Current points for player two: " + p2.getPoints());
+                    // Player 2
+
+                    System.out.println("Current points for Player 2: " + player2.getPoints());
+
                     diceCup.roll();
+                    System.out.println("Player 2 rolled: " + diceCup.getDice1().getFaceValue() + " and " + diceCup.getDice2().getFaceValue());
 
-                    p2.addPoints(diceCup.totalValue);
+                    player2.addPoints(diceCup.totalValue);
+                    System.out.println("Points after roll for Player 2: " + player2.getPoints());
 
-
-                    System.out.println("Dice rolled: " + diceCup.getDice1().getFaceValue() + " and " + diceCup.getDice2().getFaceValue());
-
-
-                    System.out.println("Points after roll for player two: " + p2.getPoints());
                     break;
                 }
                 default: {
-                    System.out.println("nonononononono bad boy");
+                    // Wrong input
+                    System.out.println("Woops - wrong input, please try again...");
                 }
-
             }
         }
-        System.out.println();
-        System.out.println("TIME TO FIND OUT WHO BITES THE DUST BITCHES");
-        System.out.println("Player one has: " + p1.getPoints() + " point and player two has: " + p2.getPoints() + " points");
-        System.out.println("WHICH FUCKING MEANS!!!!!");
-        if (p1.getPoints()>p2.getPoints()){
-            System.out.println("Player one OWNS player two SUCKA");
-        } else if (p1.getPoints()<p2.getPoints()){
-            System.out.println("Player two PWNS player one SUCKA");
-        } else {
-            System.out.println("Player one and player two are equals... pussies");
-        }
-        hej.close();
-    }
 
+        // Some one reached 40 points
+        System.out.println();
+        System.out.println("Someone reached 40 points - time to find the winner!");
+        System.out.println("Player 1 has: " + player1.getPoints() + " points and Player 2 has: " + player2.getPoints() + " points");
+        System.out.println();
+
+        if (player1.getPoints()>player2.getPoints()){
+            System.out.println("Player 1 wins!!");
+        } else if (player1.getPoints()<player2.getPoints()){
+            System.out.println("Player 2 wins!!");
+        } else {
+            System.out.println("It's a tie!");
+        }
+
+        System.out.println();
+        System.out.println("Thank you for playing!");
+        
+        scanner.close();
+    }
 }
