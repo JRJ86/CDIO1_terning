@@ -1,6 +1,6 @@
 package game;
-
 import java.util.Random;
+
 public class Die {
 
     private int faceValue = 1;
@@ -16,7 +16,5 @@ public class Die {
     {
         return faceValue;
     }
-
-
 }
 
