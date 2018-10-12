@@ -77,3 +77,4 @@ class GameTest {
 
     }
 }
+//Vi tester at den nu bliver opdateret
